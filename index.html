@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sagu Nusantara - Warisan Kuliner Modern</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Font Awesome (Alternative to Lucide for simple HTML) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --bg-body: #FDFCF8;
+            --primary-green: #3A5A40;
+            --secondary-green: #588157;
+            --accent-green: #A3B18A;
+            --soft-green: #E9EDC9;
+            --text-dark: #3D3D3D;
+            --text-light: #6B705C;
+            --bg-soft: #F2F4EF;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Navbar Customization */
+        .navbar {
+            transition: all 0.4s ease;
+            padding: 1.5rem 0;
+        }
+
+        .navbar.scrolled {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 0.8rem 0;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .nav-link {
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--secondary-green) !important;
+            margin: 0 1rem;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-green) !important;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding-top: 80px;
+        }
+
+        .hero-bg-split {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background-color: var(--bg-soft);
+            z-index: -1;
+        }
+
+        .badge-hero {
+            background-color: var(--soft-green);
+            color: var(--secondary-green);
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 0.7rem;
+            letter-spacing: 0.15em;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 2rem;
+        }
+
+        .hero-title {
+            font-size: clamp(3rem, 6vw, 4.5rem);
+            color: var(--primary-green);
+            line-height: 1.1;
+            margin-bottom: 2rem;
+        }
+
+        .hero-img-container {
+            position: relative;
+            border: 12px solid white;
+            border-radius: 2rem;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .hero-img-container img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            transition: transform 1s;
+        }
+
+        .hero-img-container:hover img {
+            transform: scale(1.05);
+        }
+
+        .hero {
+            text-align: center;
+            padding: 80px 10% 40px;
+        }
+
+        .hero h2 {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin: auto;
+            line-height: 1.6;
+            color: #555;
+        }
+
+
+        /* Section Styling */
+        .section-padding {
+            padding: 100px 0;
+        }
+
+        .tagline {
+            color: var(--accent-green);
+            font-weight: 800;
+            letter-spacing: 0.3em;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        /* History Section */
+        .history-box {
+            background-color: var(--primary-green);
+            color: white;
+            border-radius: 2rem;
+            padding: 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .history-box::after {
+            content: 'f';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            bottom: -50px;
+            right: -20px;
+            font-size: 20rem;
+            opacity: 0.05;
+        }
+
+        /* Buttons */
+        .btn-primary-sagu {
+            background-color: var(--primary-green);
+            color: white;
+            border: none;
+            padding: 1rem 2.5rem;
+            border-radius: 1rem;
+            font-weight: 700;
+            transition: all 0.3s;
+        }
+
+        .btn-primary-sagu:hover {
+            background-color: #344E41;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(58, 90, 64, 0.2);
+            color: white;
+        }
+
+        .btn-outline-sagu {
+            background-color: transparent;
+            color: var(--secondary-green);
+            border: 1px solid var(--accent-green);
+            padding: 1rem 2.5rem;
+            border-radius: 1rem;
+            font-weight: 700;
+            transition: all 0.3s;
+        }
+
+        .btn-outline-sagu:hover {
+            background-color: var(--bg-soft);
+            color: var(--primary-green);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-green);
+            color: white;
+            padding-top: 80px;
+            padding-bottom: 40px;
+        }
+
+        .footer-logo-circle {
+            width: 40px;
+            height: 40px;
+            background: var(--accent-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-green);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+                <div class="footer-logo-circle">
+                    <i class="fas fa-leaf"></i>
+                </div>
+                <span class="fw-bold tracking-tight text-success-emphasis"
+                    style="color: var(--primary-green) !important;">
+                    SAGU<span style="color: var(--accent-green); font-weight: 300;">NUSANTARA</span>
+                </span>
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item"><a class="nav-link" href="#hero">Beranda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#tentang">Tentang kami</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#history">Sejarah</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#menu">Koleksi Menu</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#tim">Profil tim</a></li>
+                    <li class="nav-item ms-lg-4 mt-3 mt-lg-0">
+                        <a href="https://www.whatsapp.com" target="_blank"
+                            class="btn btn-primary-sagu px-4 py-2">Hubungi Kami</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="hero">
+        <div class="hero-bg-split"></div>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right" data-aos-duration="1000">
+                    <div class="badge-hero">
+                        <i class="fas fa-seedling"></i> Keanekaragaman Pangan Lokal
+                    </div>
+                    <h1 class="hero-title">Akar Tradisi,<br><span class="fst-italic fw-light">Cita Rasa Kini</span></h1>
+                    <p class="text-secondary fs-5 mb-5 fw-light" style="max-width: 500px;">
+                        Menghadirkan kembali warisan kuliner asli Nusantara melalui pengolahan modern yang menjaga
+                        kemurnian dan cita rasa luhur pohon kehidupan.
+                    </p>
+                    <div class="d-flex flex-column flex-sm-row gap-3">
+                        <a href="#menu"
+                            class="btn btn-primary-sagu d-flex align-items-center justify-content-center gap-2">
+                            Jelajahi Menu <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="#history" class="btn btn-outline-sagu">Pelajari Sejarah</a>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="zoom-in" data-aos-duration="1200">
+                    <div class="hero-img-container">
+                        <img src="Sagu.png" alt="Pengolahan Sagu">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Sejarah Sagu Section -->
+    <section class="section-padding bg-white" id="history">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-lg-8" data-aos="fade-up">
+                    <span class="tagline">Kronik Nusantara</span>
+                    <h2 class="display-4 mb-4">Sejarah Pohon Kehidupan</h2>
+                    <p class="text-muted fs-5">Sagu (*Metroxylon sagu*) bukan sekadar bahan pangan, ia adalah saksi bisu
+                        peradaban maritim Indonesia yang telah menghidupi jutaan jiwa selama berabad-abad.</p>
+                </div>
+            </div>
+
+            <div class="row g-5">
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="p-4 border-start border-4" style="border-color: var(--soft-green) !important;">
+                        <h4 class="fw-bold mb-3">Era Relief Borobudur</h4>
+                        <p class="text-muted">Jejak sejarah sagu dapat ditemukan pada relief Candi Borobudur (abad
+                            ke-8), yang menggambarkan pohon sagu sebagai salah satu tanaman penting di Jawa kala itu.
+                            Ini membuktikan bahwa sagu telah dikenal luas di seluruh kepulauan sebelum dominasi beras.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="p-4 border-start border-4" style="border-color: var(--soft-green) !important;">
+                        <h4 class="fw-bold mb-3">Identitas Indonesia Timur</h4>
+                        <p class="text-muted">Bagi masyarakat Papua, Maluku, dan sebagian Sulawesi, sagu adalah
+                            identitas budaya. Proses "Tokok Sagu" (memanen sagu) merupakan ritual gotong royong yang
+                            mempererat ikatan sosial dan penghormatan terhadap alam.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="history-box mt-5" data-aos="fade-up">
+                <div class="row align-items-center">
+                    <div class="col-lg-7">
+                        <h3 class="mb-4">Tahukah Anda?</h3>
+                        <p class="opacity-75 mb-0">Satu batang pohon sagu dewasa dapat menghasilkan 150-300 kg pati
+                            sagu. Dalam satu hektar lahan sagu, energi pangan yang dihasilkan jauh lebih besar
+                            dibandingkan padi maupun jagung, menjadikannya kunci kedaulatan pangan masa depan yang
+                            berkelanjutan.</p>
+                    </div>
+                    <div class="col-lg-5 text-center text-lg-end mt-4 mt-lg-0">
+                        <div class="display-1 fw-bold opacity-25">100%</div>
+                        <p class="text-uppercase tracking-widest small">Organik & Berkelanjutan</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row g-5 mb-5">
+                <div class="col-lg-5">
+                    <div class="d-flex align-items-center gap-3 mb-4">
+                        <div class="footer-logo-circle" style="background-color: white;">
+                            <i class="fas fa-leaf" style="color: var(--primary-green);"></i>
+                        </div>
+                        <span class="text-2xl font-bold tracking-tighter fs-4 fw-bold">SAGU<span
+                                style="color: var(--accent-green); font-weight: 300;">NUSANTARA</span></span>
+                    </div>
+                    <p class="text-white-50 mb-4" style="max-width: 350px;">Website Tugas Sekolah – Jurusan TKJ. 
+                        Proyek ini dibuat sebagai latihan pembuatan website dengan tema budaya pangan lokal.</p>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="text-white-50 fs-5 hover-accent"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white-50 fs-5 hover-accent"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white-50 fs-5 hover-accent"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <h5 class="fw-bold mb-4">Navigasi</h5>
+                    <ul class="list-unstyled text-white-50">
+                        <li class="mb-3"><a href="#" class="text-decoration-none text-reset">Beranda</a></li>
+                        <li class="mb-3"><a href="#tentang" class="text-decoration-none text-reset">Tentang Kami</a>
+                        </li>
+                        <li class="mb-3"><a href="#history" class="text-decoration-none text-reset">Sejarah Sagu</a>
+                        </li>
+                        <li class="mb-3"><a href="#menu" class="text-decoration-none text-reset">Menu Pilihan</a></li>
+                        <li class="mb-3"><a href="#tim" class="text-decoration-none text-reset">Profil Tim</a></li>
+                        <li class="mb-3"><a href="#" class="text-decoration-none text-reset">Proses Produksi</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <h5 class="fw-bold mb-4">Kontak Lab</h5>
+                    <ul class="list-unstyled text-white-50">
+                        <li class="mb-3"><i class="fas fa-map-marker-alt me-2"></i> SMK Negeri 1 Sentani</li>
+                        <li class="mb-3"><i class="fas fa-envelope me-2"></i> kuliner@smk.sch.id</li>
+                        <li class="mb-3"><i class="fas fa-phone me-2"></i> +62 812 3456 7890</li>
+                    </ul>
+                </div>
+            </div>
+            <div
+                class="pt-5 border-top border-white-10 d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+                <p class="text-white-50 xsmall text-uppercase tracking-widest mb-0" style="font-size: 0.6rem;">© 2026
+                    Sagu Nusantara. Projek Siswa SMK Negeri 1 Sentani - Jurusan Teknik Komputer dan Jaringan.</p>
+                <div class="d-flex gap-4 xsmall text-uppercase tracking-widest mb-0"
+                    style="font-size: 0.6rem; font-weight: 800; opacity: 0.5;">
+                    <a href="#" class="text-decoration-none text-reset">Privacy Policy</a>
+                    <a href="#" class="text-decoration-none text-reset">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            once: true,
+            duration: 1000
+        });
+
+        // Navbar Scroll Effect
+        window.onscroll = function () {
+            var nav = document.getElementById('mainNav');
+            if (window.pageYOffset > 50) {
+                nav.classList.add("scrolled");
+            } else {
+                nav.classList.remove("scrolled");
+            }
+        };
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                }
+            });
+        });
+
+        document.querySelectorAll('.fade-in, .slide-left').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+
+</html>
