@@ -104,10 +104,12 @@
         }
 
         .hero-title {
-            font-size: clamp(3rem, 6vw, 4.5rem);
+            font-size: clamp(2.8rem, 5vw, 4rem);
             color: var(--primary-green);
-            line-height: 1.1;
-            margin-bottom: 2rem;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
         }
 
         .hero-img-container {
@@ -238,6 +240,478 @@
         html {
             scroll-behavior: smooth;
         }
+
+        :root {
+            --bg-body: #FDFCF8;
+            --primary-green: #3A5A40;
+            --secondary-green: #588157;
+            --accent-green: #A3B18A;
+            --soft-green: #E9EDC9;
+            --text-dark: #3D3D3D;
+            --text-light: #6B705C;
+            --bg-soft: #F2F4EF;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Navbar Customization */
+        .navbar {
+            transition: all 0.4s ease;
+            padding: 1.5rem 0;
+        }
+
+        .navbar.scrolled {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 0.8rem 0;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .nav-link {
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--secondary-green) !important;
+            margin: 0 1rem;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-green) !important;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding-top: 150px;
+        }
+
+        .hero-bg-split {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background-color: var(--bg-soft);
+            z-index: -1;
+        }
+
+        .badge-hero {
+            background-color: var(--soft-green);
+            color: var(--secondary-green);
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 0.7rem;
+            letter-spacing: 0.15em;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 2rem;
+        }
+
+        .hero-title {
+            font-size: clamp(3rem, 6vw, 4.5rem);
+            color: var(--primary-green);
+            line-height: 1.1;
+            margin-bottom: 2rem;
+        }
+
+        .hero-img-container {
+            position: relative;
+            border: 12px solid white;
+            border-radius: 2rem;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .hero-img-container img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            transition: transform 1s;
+        }
+
+        .hero-img-container:hover img {
+            transform: scale(1.05);
+        }
+
+        .hero {
+            text-align: center;
+            padding: 80px 10% 40px;
+        }
+
+        .hero h2 {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin: auto;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        /* Section Styling */
+        .section-padding {
+            padding: 120px 0;
+        }
+
+        .tagline {
+            color: var(--accent-green);
+            font-weight: 800;
+            letter-spacing: 0.3em;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        /* History Box */
+        .history-box {
+            background-color: var(--primary-green);
+            color: white;
+            border-radius: 2rem;
+            padding: 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .history-box::after {
+            content: '\f06c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            bottom: -50px;
+            right: -20px;
+            font-size: 20rem;
+            opacity: 0.05;
+        }
+
+        /* Buttons */
+        .btn-primary-sagu {
+            background-color: var(--primary-green);
+            color: white;
+            border: none;
+            padding: 1rem 2.5rem;
+            border-radius: 1rem;
+            font-weight: 700;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary-sagu:hover {
+            background-color: #344E41;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(58, 90, 64, 0.2);
+            color: white;
+        }
+
+        .btn-outline-sagu {
+            background-color: transparent;
+            color: var(--secondary-green);
+            border: 1px solid var(--accent-green);
+            padding: 1rem 2.5rem;
+            border-radius: 1rem;
+            font-weight: 700;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-outline-sagu:hover {
+            background-color: var(--bg-soft);
+            color: var(--primary-green);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-green);
+            color: white;
+            padding-top: 80px;
+            padding-bottom: 40px;
+        }
+
+        .footer-logo-circle {
+            width: 40px;
+            height: 40px;
+            background: var(--accent-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-green);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Custom Additions for Specific Layout Needs based on User Variables */
+        .team-avatar {
+            width: 120px;
+            height: 120px;
+            background-color: var(--soft-green);
+            border: 4px solid white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            color: var(--primary-green);
+            font-size: 2.5rem;
+            font-weight: 800;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+        }
+
+        .team-card:hover .team-avatar {
+            background-color: var(--accent-green);
+            transform: translateY(-10px);
+            color: white;
+        }
+
+        .card-custom {
+            background: white;
+            border-radius: 1.5rem;
+            border: 1px solid var(--soft-green);
+            padding: 2.5rem;
+            height: 100%;
+            transition: all 0.3s;
+        }
+
+        .card {
+            flex: 1;
+            min-width: 300px;
+            padding: 40px 30px;
+            background-color: #ffffff;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+
+
+        .row.justify-content-center {
+            display: flex;
+            align-items: stretch;
+        }
+
+
+        .card.text-center {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 40px 25px;
+            border-radius: 20px;
+            border: none;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+
+        .card h3 {
+            margin-bottom: 20px;
+        }
+
+
+
+        .card-custom:hover {
+            box-shadow: 0 15px 30px rgba(58, 90, 64, 0.08);
+            transform: translateY(-5px);
+        }
+
+        /* MENU */
+        :root {
+            --bg-body: #FDFCF8;
+            --primary-green: #3A5A40;
+            --secondary-green: #588157;
+            --accent-green: #A3B18A;
+            --soft-green: #E9EDC9;
+            --text-dark: #3D3D3D;
+            --text-light: #6B705C;
+            --bg-soft: #F2F4EF;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Navbar Customization */
+        .navbar {
+            transition: all 0.4s ease;
+            padding: 1.5rem 0;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .nav-link {
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--secondary-green) !important;
+            margin: 0 1rem;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-green) !important;
+        }
+
+        /* Header Section */
+        .page-header {
+            padding: 180px 0 80px;
+            background-color: var(--bg-soft);
+            text-align: center;
+            position: relative;
+        }
+
+        .badge-menu {
+            background-color: var(--soft-green);
+            color: var(--secondary-green);
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 0.7rem;
+            letter-spacing: 0.15em;
+            display: inline-flex;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Menu Filter */
+        .filter-container {
+            margin-bottom: 3rem;
+        }
+
+        .filter-btn {
+            background: white;
+            border: 1px solid var(--accent-green);
+            color: var(--secondary-green);
+            padding: 0.6rem 1.8rem;
+            border-radius: 50px;
+            font-weight: 600;
+            margin: 0.3rem;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background-color: var(--primary-green);
+            color: white;
+            border-color: var(--primary-green);
+        }
+
+        /* Menu Card */
+        .menu-card {
+            background: white;
+            border-radius: 2rem;
+            overflow: hidden;
+            border: 1px solid var(--soft-green);
+            transition: all 0.4s ease;
+            height: 100%;
+        }
+
+        .menu-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(58, 90, 64, 0.1);
+        }
+
+        .menu-img-wrapper {
+            position: relative;
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .menu-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s;
+        }
+
+        .menu-card:hover .menu-img-wrapper img {
+            transform: scale(1.1);
+        }
+
+        .menu-item {
+            transition: all 0.4s ease;
+
+        }
+
+        .price-tag {
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            background: white;
+            padding: 0.5rem 1rem;
+            border-radius: 1rem;
+            font-weight: 800;
+            color: var(--primary-green);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .menu-content {
+            padding: 2rem;
+        }
+
+        .menu-category {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--accent-green);
+            font-weight: 800;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .btn-order {
+            width: 100%;
+            background-color: var(--bg-soft);
+            color: var(--primary-green);
+            border: none;
+            padding: 0.8rem;
+            border-radius: 1rem;
+            font-weight: 700;
+            margin-top: 1rem;
+            transition: all 0.3s;
+        }
+
+        .btn-order:hover {
+            background-color: var(--primary-green);
+            color: white;
+        }
     </style>
 </head>
 
@@ -261,9 +735,9 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto align-items-lg-center">
                     <li class="nav-item"><a class="nav-link" href="#hero">Beranda</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#tentang">Tentang kami</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#history">Sejarah</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#menu">Koleksi Menu</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#cerita">Tentang kami</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#history">Asal usul</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#menu">Olahan Sagu</a></li>
                     <li class="nav-item"><a class="nav-link" href="#tim">Profil tim</a></li>
                     <li class="nav-item ms-lg-4 mt-3 mt-lg-0">
                         <a href="https://www.whatsapp.com" target="_blank"
@@ -281,24 +755,27 @@
             <div class="row align-items-center">
                 <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right" data-aos-duration="1000">
                     <div class="badge-hero">
-                        <i class="fas fa-seedling"></i> Keanekaragaman Pangan Lokal
+                        <i class="fas fa-seedling"></i> Mengenal Olahan Sagu
                     </div>
-                    <h1 class="hero-title">Akar Tradisi,<br><span class="fst-italic fw-light">Cita Rasa Kini</span></h1>
+                    <h1 class="hero-title">Menjelajahi Berbagai<br><span class="fst-italic fw-light">Olahan Sagu</span>
+                    </h1>
                     <p class="text-secondary fs-5 mb-5 fw-light" style="max-width: 500px;">
-                        Menghadirkan kembali warisan kuliner asli Nusantara melalui pengolahan modern yang menjaga
-                        kemurnian dan cita rasa luhur pohon kehidupan.
+                        Sagu adalah salah satu bahan makanan pokok asli Indonesia yang punya banyak potensi. Di sini,
+                        kami merangkum berbagai jenis olahan sagu dari berbagai daerah beserta sejarah singkatnya agar
+                        kita lebih mengenal kekayaan pangan lokal kita sendiri.
                     </p>
                     <div class="d-flex flex-column flex-sm-row gap-3">
-                        <a href="#menu"
+                        <a href="#cerita"
                             class="btn btn-primary-sagu d-flex align-items-center justify-content-center gap-2">
-                            Jelajahi Menu <i class="fas fa-arrow-right"></i>
+                            Cerita Kami </a> <i class="fas fa-arrow-right"></i>
                         </a>
-                        <a href="#history" class="btn btn-outline-sagu">Pelajari Sejarah</a>
+                        <a href="#tim" class="btn btn-outline-sagu">Profil Tim</a>
                     </div>
                 </div>
                 <div class="col-lg-6" data-aos="zoom-in" data-aos-duration="1200">
                     <div class="hero-img-container">
-                        <img src="Sagu.png" alt="Pengolahan Sagu">
+                        <img src="https://asset.kompas.com/crops/xfJTGZQHC6s2N1J2fjerNz4xUv8=/0x0:0x0/1200x900/data/photo/2013/12/22/1310171saguu780x390.jpg"
+                            alt="Pengolahan Sagu">
                     </div>
                 </div>
             </div>
@@ -306,16 +783,81 @@
     </section>
 
 
+    <!-- History / Cerita Kami Section -->
+    <section id="cerita" class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-12" data-aos="zoom-in-up" data-aos-duration="800">
+                    <div class="history-box">
+                        <div class="row align-items-center position-relative" style="z-index: 2;">
+                            <div class="col-lg-8">
+                                <span class="tagline text-white">Awal Mula Kami</span>
+                                <h2 class="mb-4 text-white" style="font-size: 2.5rem;">Alasan Kami<br> Memulai Projek
+                                    Ini</h2>
+                                <p class="mb-4 text-white" style="font-size: 1.1rem; opacity: 0.9; line-height: 1.8;">
+                                    Proyek ini dikembangkan sebagai bagian dari tugas mata pelajaran pilihan coding.
+                                    Kami berkomitmen untuk tidak hanya membangun sebuah platform digital, tetapi juga
+                                    mengangkat kekayaan pangan lokal melalui tema sagu. Melalui proses ini, kami
+                                    mendalami teknik perancangan desain web sekaligus memperluas wawasan mengenai nilai
+                                    strategis pohon sagu bagi ketahanan pangan Indonesia.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visi & Misi Section -->
+    <section class="section-padding" style="background-color: var(--bg-soft);">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <span class="tagline">Tujuan Kami</span>
+                <h2 class="font-serif" style="color: var(--primary-green); font-size: 2.5rem;">Apa yang Ingin Kami
+                    Capai?</h2>
+            </div>
+
+            <div class="row g-4 justify-content-center">
+                <!-- Visi -->
+                <div class="col-md-5" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card text-center { height: 100%; }">
+                        <!-- <div class="footer-logo-circle mx-auto mb-4" style="width: 60px; height: 60px; font-size: 1.5rem;">
+                            <i class="fa-solid fa-eye"></i>
+                        </div> -->
+                        <h3 class="font-serif mb-3" style="color: var(--primary-green);">Mengenalkan Sagu</h3>
+                        <p style="color: var(--text-light); line-height: 1.7;">Kami ingin menunjukkan bahwa sagu bukan
+                            cuma bahan makanan biasa. Lewat platform ini, kami berharap teman-teman bisa melihat potensi
+                            sagu sebagai pangan lokal yang bisa diolah secara modern dan menarik.</p>
+                    </div>
+                </div>
+                <!-- Misi -->
+                <div class="col-md-5" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card text-center { height: 100%; }">
+                        <!-- <div class="footer-logo-circle mx-auto mb-4" style="width: 60px; height: 60px; font-size: 1.5rem;">
+                            <i class="fa-solid fa-bullseye"></i>
+                        </div> -->
+                        <h3 class="font-serif mb-3" style="color: var(--primary-green);">Belajar dan Berbagi</h3>
+                        <p style="color: var(--text-light); line-height: 1.7;">
+                            Selain untuk memenuhi tugas coding kelas 11, kami ingin website ini jadi tempat belajar yang
+                            asik. Kami mengumpulkan informasi sejarah dan daftar olahan sagu agar lebih mudah dipahami
+                            oleh siapa saja.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Sejarah Sagu Section -->
     <section class="section-padding bg-white" id="history">
         <div class="container">
             <div class="row mb-5">
                 <div class="col-lg-8" data-aos="fade-up">
-                    <span class="tagline">Kronik Nusantara</span>
-                    <h2 class="display-4 mb-4">Sejarah Pohon Kehidupan</h2>
-                    <p class="text-muted fs-5">Sagu (*Metroxylon sagu*) bukan sekadar bahan pangan, ia adalah saksi bisu
-                        peradaban maritim Indonesia yang telah menghidupi jutaan jiwa selama berabad-abad.</p>
+                    <span class="tagline">Asal Usul Sagu</span>
+                    <h2 class="display-4 mb-4">Jejak Sagu di Nusantara</h2>
+                    <p class="text-muted fs-5">Sagu adalah salah satu sumber pangan tertua yang tumbuh alami di
+                        kepulauan Indonesia. Jauh sebelum nasi dikenal secara luas, masyarakat kita sudah mengandalkan
+                        pohon ini untuk bertahan hidup dan membangun peradaban di berbagai pulau.</p>
                 </div>
             </div>
 
@@ -357,7 +899,154 @@
         </div>
     </section>
 
+    <!-- Menu Section -->
+    <section class="section-padding py-5" id="menu">
+        <div class="container" style="margin-top: 110px;" data-aos="fade-up" data-aos-delay="100">
 
+            <!-- Filters -->
+            <div class="filter-container text-center" data-aos="fade-up" data-aos-delay="100">
+                <button class="filter-btn active" onclick="filterMenu('all')">Semua Menu</button>
+                <button class="filter-btn" onclick="filterMenu('snack')">Camilan</button>
+                <button class="filter-btn" onclick="filterMenu('dessert')">Makanan Penutup</button>
+                <button class="filter-btn" onclick="filterMenu('traditional')">Tradisional</button>
+            </div>
+
+            <!-- Menu Grid -->
+            <div class="row g-4">
+                <!-- Menu 1 -->
+                <div class="col-lg-4 col-md-6 menu-item traditional" data-aos="fade-up">
+                    <div class="menu-card">
+                        <div class="menu-img-wrapper">
+                            <img src="https://cdn.grid.id/crop/0x0:0x0/700x465/photo/2022/09/19/papeda-kuah-kuningjpg-20220919082120.jpg"
+                                alt="Papeda ikan kuah kuning">
+                        </div>
+                        <div class="menu-content">
+                            <span class="menu-category">Tradisional</span>
+                            <h4 class="font-serif">Papeda ikan kuah kuning</h4>
+                            <p class="small text-muted">Makanan pokok orang Papua yang terbuat dari sagu yang dimakan
+                                dengan ikan kuah kuning</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu 2 -->
+                <div class="col-lg-4 col-md-6 menu-item snack" data-aos="fade-up" data-aos-delay="100">
+                    <div class="menu-card">
+                        <div class="menu-img-wrapper">
+                            <img src="https://img.antarafoto.com/cache/1200x799/2023/06/22/pembuatan-makanan-khas-serui-sagu-bakar-171rl-dom.jpg"
+                                alt="sagu bakar">
+                        </div>
+                        <div class="menu-content">
+                            <span class="menu-category">Camilan</span>
+                            <h4 class="font-serif">Sagu bakar gula merah</h4>
+                            <p class="small text-muted">Sagu yang diolah dengan kelapa parut dan isian gula merah
+                                dibakar</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu 3 -->
+                <div class="col-lg-4 col-md-6 menu-item traditional" data-aos="fade-up" data-aos-delay="200">
+                    <div class="menu-card">
+                        <div class="menu-img-wrapper">
+                            <img src="https://www.indonesia.travel/contentassets/d67583dd31f948a984a4bbc23c9d095a/sagu-sep-1.jpg"
+                                alt="sagu sep">
+                        </div>
+                        <div class="menu-content">
+                            <span class="menu-category">Tradisional</span>
+                            <h4 class="font-serif">Sagu sep</h4>
+                            <p class="small text-muted">Sagu Sep adalah makanan khas Papua Selatan yang dibuat dari
+                                tepung sagu yang dimasak hingga menjadi adonan kenyal dan padat</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu 4 -->
+                <div class="col-lg-4 col-md-6 menu-item snack" data-aos="fade-up">
+                    <div class="menu-card">
+                        <div class="menu-img-wrapper">
+                            <img src="https://cdn.8mediatech.com/gambar/50270652591-5_resep_kue_sagu_praktis_untuk_pemula_yang_mudah_dibuat_di_rumah.jpg"
+                                alt="kue kering">
+                        </div>
+                        <div class="menu-content">
+                            <span class="menu-category">Cemilan</span>
+                            <h4 class="font-serif">Kue sagu</h4>
+                            <p class="small text-muted">Kue sagu selalu jadi camilan favorit banyak orang karena
+                                teksturnya ringan dan mudah lumer di mulut. </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu 5 -->
+                <div class="col-lg-4 col-md-6 menu-item snack" data-aos="fade-up" data-aos-delay="100">
+                    <div class="menu-card">
+                        <div class="menu-img-wrapper">
+                            <img src="https://rricoid-assets.obs.ap-southeast-4.myhuaweicloud.com/berita/58/images/1704688024026-f/jpmvyqvz956qxid.jpeg"
+                                alt="kue bagea">
+                        </div>
+                        <div class="menu-content">
+                            <span class="menu-category">Camilan</span>
+                            <h4 class="font-serif">Kue sagu bagea</h4>
+                            <p class="small text-muted">Camilan renyah yang sangat gurih, Dengan tambahan biji kenari
+                                dan kacang tanah dan juga rempah seperti kayu manis dan cengkeh</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu 6 -->
+                <div class="col-lg-4 col-md-6 menu-item dessert" data-aos="fade-up" data-aos-delay="200">
+                    <div class="menu-card">
+                        <div class="menu-img-wrapper">
+                            <img src="https://asset.kompas.com/crops/yeEHa4gzMcvlrCGhKmm-NJqG_IA=/113x0:761x432/750x500/data/photo/2018/09/24/542948415.jpg"
+                                alt="leker sagu">
+                        </div>
+                        <div class="menu-content">
+                            <span class="menu-category">Makanan Penutup</span>
+                            <h4 class="font-serif">Leker sagu</h4>
+                            <p class="small text-muted">Rasa sagunya gurih dan manis, ditambah isian suwiran ikan sambal
+                                ternyata membuat sagu jadi tambah nikmat. Masing-masing pembeli punya selera</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tim Kami Section -->
+    <section id="tim" class="section-padding">
+        <div class="container text-center">
+            <span class="tagline" data-aos="fade-up">SOSOK DI BALIK LAYAR</span>
+            <h2 class="font-serif mb-5" style="color: var(--primary-green); font-size: 2.5rem;" data-aos="fade-up">
+                Kenalan sama Tim Kami</h2>
+
+            <div class="row g-4 mt-2 justify-content-center">
+                <!-- Member 1 -->
+                <div class="col-lg-3 col-md-6 team-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="team-avatar">M</div>
+                    <h4 class="font-serif" style="color: var(--text-dark);">Miftahul Jannah</h4>
+                    <p style="color: var(--text-light); font-weight: 600; font-size: 0.9rem;">Homepage & Footer</p>
+                </div>
+                <!-- Member 2 -->
+                <div class="col-lg-3 col-md-6 team-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="team-avatar">L</div>
+                    <h4 class="font-serif" style="color: var(--text-dark);">Tri Laura Felle</h4>
+                    <p style="color: var(--text-light); font-weight: 600; font-size: 0.9rem;">Menu Page</p>
+                </div>
+                <!-- Member 3 -->
+                <div class="col-lg-3 col-md-6 team-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="team-avatar">J</div>
+                    <h4 class="font-serif" style="color: var(--text-dark);">Jihan Nabila</h4>
+                    <p style="color: var(--text-light); font-weight: 600; font-size: 0.9rem;">About Us</p>
+                </div>
+                <!-- Member 4 -->
+                <div class="col-lg-3 col-md-6 team-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="team-avatar">C</div>
+                    <h4 class="font-serif" style="color: var(--text-dark);">Cristin Simanjuntak</h4>
+                    <p style="color: var(--text-light); font-weight: 600; font-size: 0.9rem;">Profile Page</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
     <!-- Footer -->
@@ -372,12 +1061,16 @@
                         <span class="text-2xl font-bold tracking-tighter fs-4 fw-bold">SAGU<span
                                 style="color: var(--accent-green); font-weight: 300;">NUSANTARA</span></span>
                     </div>
-                    <p class="text-white-50 mb-4" style="max-width: 350px;">Website Tugas Sekolah – Jurusan TKJ. 
+                    <p class="text-white-50 mb-4" style="max-width: 350px;">Website Tugas Sekolah – Jurusan TKJ.
                         Proyek ini dibuat sebagai latihan pembuatan website dengan tema budaya pangan lokal.</p>
                     <div class="d-flex gap-3">
-                        <a href="#" class="text-white-50 fs-5 hover-accent"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="text-white-50 fs-5 hover-accent"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="text-white-50 fs-5 hover-accent"><i class="fab fa-facebook"></i></a>
+
+                        <a href="https://www.instagram.com/" target="_blank" class="text-white-50 fs-5 hover-accent"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="https://twitter.com/" target="_blank" class="text-white-50 fs-5 hover-accent"><i
+                                class="fab fa-twitter"></i></a>
+                        <a href="https://www.facebook.com/" target="_blank" class="text-white-50 fs-5 hover-accent"><i
+                                class="fab fa-facebook"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-4">
@@ -386,11 +1079,11 @@
                         <li class="mb-3"><a href="#" class="text-decoration-none text-reset">Beranda</a></li>
                         <li class="mb-3"><a href="#tentang" class="text-decoration-none text-reset">Tentang Kami</a>
                         </li>
-                        <li class="mb-3"><a href="#history" class="text-decoration-none text-reset">Sejarah Sagu</a>
+                        <li class="mb-3"><a href="#history" class="text-decoration-none text-reset">Asal Usul Sagu</a>
                         </li>
-                        <li class="mb-3"><a href="#menu" class="text-decoration-none text-reset">Menu Pilihan</a></li>
+                        <li class="mb-3"><a href="#menu" class="text-decoration-none text-reset">Olahan Sagu</a></li>
                         <li class="mb-3"><a href="#tim" class="text-decoration-none text-reset">Profil Tim</a></li>
-                        <li class="mb-3"><a href="#" class="text-decoration-none text-reset">Proses Produksi</a></li>
+
                     </ul>
                 </div>
                 <div class="col-lg-3 col-md-4">
@@ -446,6 +1139,65 @@
         document.querySelectorAll('.fade-in, .slide-left').forEach(el => {
             observer.observe(el);
         });
+
+        function filterMenu(category) {
+            // 1. Ambil semua kartu menu
+            const items = document.querySelectorAll('.menu-item');
+
+            // 2. Ambil semua tombol filter
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            // 3. Atur status tombol yang aktif
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.getAttribute('onclick').includes(category)) {
+                    btn.classList.add('active');
+                }
+            });
+
+            // 4. Logika filter kartu
+            items.forEach(item => {
+                if (category === 'all') {
+                    item.style.display = 'block'; // Tampilkan semua
+                } else {
+                    if (item.classList.contains(category)) {
+                        item.style.display = 'block'; // Tampilkan yang cocok
+                    } else {
+                        item.style.display = 'none'; // Sembunyikan yang tidak cocok
+                    }
+                }
+            });
+        }
+    </script>
+    <script>
+        function filterMenu(category) {
+            // 1. Ambil semua kartu menu
+            const items = document.querySelectorAll('.menu-item');
+
+            // 2. Ambil semua tombol filter
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            // 3. Atur status tombol yang aktif
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.getAttribute('onclick').includes(category)) {
+                    btn.classList.add('active');
+                }
+            });
+
+            // 4. Logika filter kartu
+            items.forEach(item => {
+                if (category === 'all') {
+                    item.style.display = 'block'; // Tampilkan semua
+                } else {
+                    if (item.classList.contains(category)) {
+                        item.style.display = 'block'; // Tampilkan yang cocok
+                    } else {
+                        item.style.display = 'none'; // Sembunyikan yang tidak cocok
+                    }
+                }
+            });
+        }
     </script>
 </body>
 
